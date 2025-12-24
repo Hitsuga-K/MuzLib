@@ -1,68 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>MuzLib — Моя музыкальная библиотека</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <header>
-        <h1>🎵 MuzLib — Моя музыкальная библиотека</h1>
-        <p class="subtitle">Список любимых треков и плейлистов</p>
-    </header>
-
-    <main>
-        <!-- Блок с песнями -->
-        <section class="card">
-            <h2>🎶 Мои песни</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Название</th>
-                        <th>Исполнитель</th>
-                        <th>Плейлист</th>
-                        <th>Длительность</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for song in songs %}
-                    <tr>
-                        <td>{{ song.title }}</td>
-                        <td>{{ song.artist }}</td>
-                        <td><span class="pill-small">{{ song.playlist }}</span></td>
-                        <td align="right">{{ song.duration }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Блок с плейлистами -->
-        <section class="card">
-            <h2>📂 Плейлисты</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Название плейлиста</th>
-                        <th>Описание</th>
-                        <th>Создан</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for playlist in playlists %}
-                    <tr>
-                        <td><span class="pill-small">{{ playlist.name }}</span></td>
-                        <td>{{ playlist.description }}</td>
-                        <td>{{ playlist.created_at }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 MuzLib · Сделано на FastAPI + PostgreSQL</p>
-    </footer>
-</body>
-</html>
+<section class="card">
+    <h2>🛍️ Товары</h2>
+    <a href="/add-product"><button>➕ Добавить товар</button></a>
+    <div class="product-list">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">{{ product.price }} ₽</p>
+            <a href="/product/{{ product.id }}"><button>Купить</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
