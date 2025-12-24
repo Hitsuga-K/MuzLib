@@ -1,7 +1,31 @@
+
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9fafc;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f9;
     margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #4a90e2;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.subtitle {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+main {
     padding: 20px;
 }
 
@@ -27,7 +51,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background: #f2f6fa;
+    background: #f9f9f9;
 }
 
 .pill-small {
@@ -36,4 +60,13 @@ tr:nth-child(even) {
     padding: 4px 10px;
     border-radius: 12px;
     font-size: 0.85em;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #f1f1f1;
+    font-size: 0.9em;
+    color: #555;
 }
